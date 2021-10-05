@@ -56,10 +56,10 @@ mutest_case("nodes should survive self-assignment")
 
 mutest_case("list nodes should be movable, but not assignable")
 {
-	chk !std::is_copy_constructible_v<X>;
-	chk !std::is_copy_assignable_v<X>;
-	chk std::is_move_constructible_v<X>;
-	chk std::is_move_assignable_v<X>;
+	chk !std::is_copy_constructible<X>::value;
+	chk !std::is_copy_assignable<X>::value;
+	chk std::is_move_constructible<X>::value;
+	chk std::is_move_assignable<X>::value;
 }
 
 mutest_case("list should be empty after construction")
