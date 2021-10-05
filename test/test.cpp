@@ -263,3 +263,15 @@ mutest_case("list::erase correctly removes an element")
 	chk it == l.begin();
 	chk _get_ptrs(l) == xvec{ &x[1], &x[2] };
 }
+
+mutest_case("list::push_front inserts at the beginning")
+{
+	X x[3];
+
+	ns::list<X, &X::node> l;
+	l.push_back(x[0]);
+	l.push_back(x[1]);
+
+	l.push_front(x[2]);
+	chk _get_ptrs(l) == xvec{ &x[2], &x[0], &x[1] };
+}

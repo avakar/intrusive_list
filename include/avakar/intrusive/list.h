@@ -101,7 +101,7 @@ struct list
 
 	void push_front(T & v) noexcept
 	{
-		(v.*member)._attach_after(_head);
+		(v.*member)._attach_before(*_head._next);
 	}
 
 	void pop_front() noexcept
