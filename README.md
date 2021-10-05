@@ -32,7 +32,7 @@ int main()
     assert(!x.memory_order.attached());
 
     // You can enumerate elements the way you would any other range.
-    for (X & elem: l) {
+    for (X & elem: load_order_list) {
         // ...
     }
 
