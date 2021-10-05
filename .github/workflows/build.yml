@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: true
 
     - name: Configure
       run: cmake -B _build -DCMAKE_BUILD_TYPE=${{matrix.cfg}}
